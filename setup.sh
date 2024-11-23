@@ -11,6 +11,7 @@ mv ~/.local/share/kxmlgui5 /dev/shm/
 mv ~/.local/share/dolphin /dev/shm/
 mv ~/.local/share/konsole /dev/shm/
 mv ~/.local/share/applications /dev/shm/
+mv ~/.local/share/plasma /dev/shm/
 
 #这里有一个dolphin用的配色
 ln -s "$ROOT/local-share/color-schemes"  ~/.local/share/
@@ -22,4 +23,7 @@ ln -s "$ROOT/local-share/dolphin"        ~/.local/share/
 ln -s "$ROOT/local-share/konsole"        ~/.local/share/
 #常用快捷方式，全是手写的。有些程序或许会侵入这里，但是基本都不是我们要的，都需要删除
 ln -s "$ROOT/local-share/applications"        ~/.local/share/
+#这里面是我们手写的desktoptheme breeze-dark-opaque
+#里面的改动是dialogs和widgets 的透明度，其他都是breeze dark的link
+ln -s "$ROOT/local-share/plasma"        ~/.local/share/
 
