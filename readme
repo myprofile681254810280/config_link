@@ -1,0 +1,7 @@
+
+这里存放的大部分，都算是 local/share中的规模大的配置文件，少数例外是kvantum，其实kavntum也该存在于local share中
+
+更大的icon之类的放入static中
+
+这种大规模配置文件，我们基本倾向不怎么改动的，所以放入link中，在改动后基本就需要更新repo
+而改动更频繁的，更普遍的.config文件，就不放在这里link了
