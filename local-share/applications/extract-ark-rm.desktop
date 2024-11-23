@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=在这里解压(ark)并删除
+GenericName=在这里解压(ark)并删除
+Comment=
+Exec=bash ~/app/extract-here/run-del.sh %f;
+Icon=ark
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Graphics;Viewer;
+MimeType=application/x-tar;application/x-compressed-tar;application/x-bzip-compressed-tar;application/x-tarz;application/x-xz-compressed-tar;application/x-lzma-compressed-tar;application/x-lzip-compressed-tar;application/x-tzo;application/x-lrzip-compressed-tar;application/x-lz4-compressed-tar;application/x-zstd-compressed-tar;application/vnd.debian.binary-package;application/x-deb;application/x-cd-image;application/x-bcpio;application/x-cpio;application/x-cpio-compressed;application/x-sv4cpio;application/x-sv4crc;application/x-rpm;application/x-source-rpm;application/vnd.ms-cab-compressed;application/x-xar;application/x-iso9660-appimage;application/x-archive;application/vnd.rar;application/x-rar;application/x-7z-compressed;application/zip;application/x-java-archive;application/x-compress;application/gzip;application/x-bzip;application/x-lzma;application/x-xz;

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Convert bilibili xml
+GenericName=Convert bilibili xml
+Comment=Convert bilibili xml
+Exec=bash ~/app/bilibili/ass/run.sh %u
+Icon=aegisub
+Terminal=false
+Type=Application
+MimeType=text/xml;

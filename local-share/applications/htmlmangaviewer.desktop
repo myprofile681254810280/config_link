@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Name=Html Manga Viewer
+Exec=python ~/dmzj/mspider-local/mangaviewerserver/open.py
+Icon=mcomix
+Terminal=false
+Type=Application
+Categories=Graphics;Viewer;
+MimeType=inode/directory;
+StartupNotify=true

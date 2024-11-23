@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Name=Qml Terminal
+Comment=Terminal Emulator
+GenericName=Terminal Emulator
+Exec=~/git/qmlterm/build/noblur -c ~/config/rc/qmlterm/shadow_font.ini 
+Icon=utilities-terminal
+Terminal=false
+Type=Application
+Categories=GTK;System;TerminalEmulator;
+StartupNotify=true

@@ -10,6 +10,7 @@ mv ~/.local/share/color-schemes /dev/shm/
 mv ~/.local/share/kxmlgui5 /dev/shm/
 mv ~/.local/share/dolphin /dev/shm/
 mv ~/.local/share/konsole /dev/shm/
+mv ~/.local/share/applications /dev/shm/
 
 #这里有一个dolphin用的配色
 ln -s "$ROOT/local-share/color-schemes"  ~/.local/share/
@@ -19,4 +20,6 @@ ln -s "$ROOT/local-share/kxmlgui5"       ~/.local/share/
 ln -s "$ROOT/local-share/dolphin"        ~/.local/share/
 #这里是konsole的各种主题配置
 ln -s "$ROOT/local-share/konsole"        ~/.local/share/
+#常用快捷方式，全是手写的。有些程序或许会侵入这里，但是基本都不是我们要的，都需要删除
+ln -s "$ROOT/local-share/applications"        ~/.local/share/
 

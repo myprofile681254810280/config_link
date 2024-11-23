@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+#Exec=~/bin/custom/open-terminal-here
+[Desktop Entry]
+Version=1.0
+Name=Open Terminal Here
+Exec=konsole --workdir
+Icon=utilities-terminal
+Terminal=false
+Type=Application
+Categories=GTK;System;TerminalEmulator;
+StartupNotify=true
+MimeType=inode/directory;
