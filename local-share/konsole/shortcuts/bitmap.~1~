@@ -1,0 +1,6 @@
+<gui version="1" name="konsole">
+  <ActionProperties>
+    <!--在konsole下的习惯，按alt+f就是开新窗口，所以就直接这么映射-->
+    <Action shortcut="Alt+F" name="new-window"/>
+  </ActionProperties>
+</gui>
