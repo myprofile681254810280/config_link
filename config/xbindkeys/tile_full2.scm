@@ -1,4 +1,4 @@
-(define freetileprefix "cd ~/app/freetile;python -m freetile ")
+(define freetileprefix "cd ~/repos/freetile;python -m freetile ")
 
 (xbindkey '(mod4 "space") (string-append freetileprefix "tile"))
 
