@@ -5,12 +5,14 @@ mv ~/.config/Kvantum /dev/shm/
 mv ~/.config/xbindkeys /dev/shm/
 mv ~/.xbindkeysrc.scm /dev/shm/
 mv ~/.config/x /dev/shm/
+mv ~/.config/i3 /dev/shm/
 #mv ~/.config/kwinrulesrc /dev/shm/
+#ln -s "$ROOT/config/kwinrulesrc"         ~/.config/
 ln -s "$ROOT/config/Kvantum"             ~/.config/
 ln -s "$ROOT/config/xbindkeys"             ~/.config/
 ln -s ~/.config/xbindkeys/kwin7.scm     ~/.xbindkeysrc.scm
 ln -s "$ROOT/config/x"             ~/.config/
-#ln -s "$ROOT/config/kwinrulesrc"         ~/.config/
+ln -s "$ROOT/config/i3"             ~/.config/
 
 mv ~/.local/share/color-schemes /dev/shm/
 mv ~/.local/share/kxmlgui5 /dev/shm/
