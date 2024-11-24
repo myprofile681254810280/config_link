@@ -1,0 +1,118 @@
+# For the benefit of emacs users: -*- shell-script -*-
+#跨平臺很方便，但是儘量不要用它，因爲有focus變動問題，而且性能不怎麼樣
+#但是compiz0.8似乎和xbindkeys的性能差不多,最大的问题在于,这两者在按下键的同时,
+#会导致当前窗口失去focus,直到释放按键为止.
+#也就是这两者都会生成一个隐藏的窗体占据掉focus吧.
+#但是comipz0.9能更平滑的处理keybind，或许和compiz0.9中关闭最后一个窗体的时候导致的focus丢失问题也有关联的.
+#
+# Version: 1.8.6
+#找出特定按键.
+#xbindkeys -k
+#xmodmap -pm
+
+#养成了不太好的依赖习惯,禁用一段时间.
+"bash ~/bin/run"
+  Mod4 + d
+"bash ~/bin/term"
+  Mod4 + 1
+#"bash ~/bin/web"
+#  Mod4 + 2
+##"pkill conky;bash ~/bin/daemons/conky.sh"
+##  Mod4 + 3
+##"pkill yabar;yabar -c ~/config/rc/yabar/main.conf"
+##  Mod4 + 4
+#"pkill conky;pkill yabar"
+#  Mod4 + 5
+
+#分散开rofi的两个触发,所以如果一个不可用了,至少还有一个备用.
+"bash ~/bin/run_tiny"
+  Mod4 + Return
+
+#捕捉映射掉cap键,让它无效化.
+#测试结果:这个办法无效,虽然xbindkeys会捕捉到,但是不会彻底拦截.
+#对比来说
+#super+n的情况下,如果不捕捉的话,vim会作为n处理掉,但是捕捉的话,vim就不会拦截了.
+#"echo 1"
+#  Caps_Lock
+
+#加入这里的原因是fcitx自身切换的时候似乎会影响到capswap,
+#但是现在(compiz0.8)似乎没有影响,所以禁用一段时间试试.
+#"python ~/bin/fcitx.py"  
+#  control + space
+
+#截屏
+"mkdir ~/show;cd ~/show;scrot"
+  Print
+#"mkdir ~/show;cd ~/show;scrot -ub"
+"mkdir ~/show;cd ~/show;gnome-screenshot -b -w"
+  alt + Print
+
+#刷壁纸
+"bash ~/git/compiz_wallpaper_manager/compiz.sh"
+  Mod4 + w
+#  Mod4 + Shift + w
+#switcher
+#"rofi -config ~/config/rc/rofi/main.conf -show window"
+#  Mod4 + Shift + w
+#  Mod4 + w
+
+#mpd
+"mpc next"
+  Mod4 + n
+#原本似乎mpd事件可以被notify-send体系监听的,但是对我来说,只有toggle有必要显示,
+#所以这里独立用一个mpd toggle脚本发送notify-send的消息,而mpd整体就不坚挺了.
+"bash ~/git/mpd-script/toggle.sh #mpd-sc mpc toggle;#~/bin/mpd_pause"
+  Mod4 + p
+"bash ~/git/mpd-script/dislike.sh"
+  Mod4 + shift + control + d
+
+#vol
+"~/bin/vol_mute"
+  Mod4 + m
+"bash ~/bin/vol_inc.sh"
+  Mod4 + Prior
+"bash ~/bin/vol_dec.sh"
+  Mod4 + Next 
+
+##############################################
+#tile
+#"python ~/git/kd_tree_tile/main.py layout next"
+#"python ~/git/kd_tree_tile/main.py layout regularize"
+#映象中凡是按到regularize键的时候,应该是要铺满全屏的,没有用过局部分屏.所以一次触发两下,直接全屏.
+"python ~/git/kd_tree_tile/main.py layout regularize;python ~/git/kd_tree_tile/main.py layout regularize"
+  Mod4 + space
+#"python ~/git/kd_tree_tile/main.py layout prev"
+#  Mod4 + shift + space
+##settings  set org.gnome.desktop.wm.keybindings minimize []
+"python ~/git/kd_tree_tile/main.py focus left"
+  Mod4 + h 
+"python ~/git/kd_tree_tile/main.py focus down"
+  Mod4 + j 
+"python ~/git/kd_tree_tile/main.py focus up  "
+  Mod4 + k 
+"python ~/git/kd_tree_tile/main.py focus right"
+  Mod4 + l 
+"python ~/git/kd_tree_tile/main.py swap left"
+  Mod4 + shift + h 
+"python ~/git/kd_tree_tile/main.py swap down"
+  Mod4 + shift + j 
+"python ~/git/kd_tree_tile/main.py swap up  "
+  Mod4 + shift + k 
+"python ~/git/kd_tree_tile/main.py swap right"
+  Mod4 + shift + l 
+"python ~/git/kd_tree_tile/main.py shrink width"
+  Mod4 + shift + control + h 
+"python ~/git/kd_tree_tile/main.py grow height"
+  Mod4 + shift + control + j 
+"python ~/git/kd_tree_tile/main.py shrink height"
+  Mod4 + shift + control + k 
+"python ~/git/kd_tree_tile/main.py grow width"
+  Mod4 + shift + control + l 
+"python ~/git/kd_tree_tile/main.py move left"
+  Mod4 + control + h 
+"python ~/git/kd_tree_tile/main.py move down"
+  Mod4 + control + j 
+"python ~/git/kd_tree_tile/main.py move up  "
+  Mod4 + control + k 
+"python ~/git/kd_tree_tile/main.py move right"
+  Mod4 + control + l 

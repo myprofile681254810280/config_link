@@ -2,8 +2,12 @@ ROOT="$(dirname "$(realpath "$0")")"
 echo "$ROOT"
 
 mv ~/.config/Kvantum /dev/shm/
+mv ~/.config/xbindkeys /dev/shm/
+mv ~/.xbindkeysrc.scm /dev/shm/
 #mv ~/.config/kwinrulesrc /dev/shm/
 ln -s "$ROOT/config/Kvantum"             ~/.config/
+ln -s "$ROOT/config/xbindkeys"             ~/.config/
+ln -s ~/.config/xbindkeys/kwin7.scm     ~/.xbindkeysrc.scm
 #ln -s "$ROOT/config/kwinrulesrc"         ~/.config/
 
 mv ~/.local/share/color-schemes /dev/shm/
@@ -26,4 +30,5 @@ ln -s "$ROOT/local-share/applications"        ~/.local/share/
 #这里面是我们手写的desktoptheme breeze-dark-opaque
 #里面的改动是dialogs和widgets 的透明度，其他都是breeze dark的link
 ln -s "$ROOT/local-share/plasma"        ~/.local/share/
+
 
