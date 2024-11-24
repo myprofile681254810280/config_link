@@ -8,6 +8,7 @@ mv ~/.config/x /dev/shm/
 mv ~/.config/i3 /dev/shm/
 mv ~/.config/vim /dev/shm/
 mv ~/.vim /dev/shm/
+#mv ~/.vimrc /dev/shm/
 mv ~/.config/mpv /dev/shm/
 #mv ~/.config/kwinrulesrc /dev/shm/
 #ln -s "$ROOT/config/kwinrulesrc"         ~/.config/
@@ -16,8 +17,9 @@ ln -s "$ROOT/config/xbindkeys"             ~/.config/
 ln -s ~/.config/xbindkeys/kwin7.scm     ~/.xbindkeysrc.scm
 ln -s "$ROOT/config/x"             ~/.config/
 ln -s "$ROOT/config/i3"             ~/.config/
-ln -s "$ROOT/config/vim"             ~/.config/
+#ln -s "$ROOT/config/vim"             ~/.config/
 ln -s "$ROOT/config/.vim"             ~/
+echo source ~/.vim/config/transparent.vim > ~/.vimrc
 ln -s "$ROOT/config/mpv"             ~/.config/
 
 mv ~/.local/share/color-schemes /dev/shm/
