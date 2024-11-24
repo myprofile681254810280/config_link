@@ -20,21 +20,21 @@ endif
 "autocmd FileType python let enable_airline=1
 
 "插件
-source ~/.config/vim/plugins.vim
+source ~/.vim/config/plugins.vim
 
-source ~/.config/vim/basic.vim
+source ~/.vim/config/basic.vim
 
 "自动加载
-for f in split(glob('~/.config/vim/autoload/*.vim'), '\n')
+for f in split(glob('~/.vim/config/autoload/*.vim'), '\n')
     exe 'source' f
 endfor
 
 "自动加载
-for f in split(glob('~/.config/vim/transparent/*.vim'), '\n')
+for f in split(glob('~/.vim/config/transparent/*.vim'), '\n')
     exe 'source' f
 endfor
 
 "按照文件类型的特殊设定,需要后置.
-for f in split(glob('~/.config/vim/filetype/*.vim'), '\n')
+for f in split(glob('~/.vim/config/filetype/*.vim'), '\n')
     exe 'source' f
 endfor
