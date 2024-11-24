@@ -8,9 +8,9 @@
 fcitx5 &
 
 #没有提前启动的理由
-if [ -f ~/.wallpaperrc ];then
-    bash ~/bin/daemons/mpd.sh
-fi
+#if [ -f ~/.wallpaperrc ];then
+#    bash ~/bin/daemons/mpd.sh
+#fi
 
 ##同上
 ##bash ~/bin/daemons/volnoti.sh

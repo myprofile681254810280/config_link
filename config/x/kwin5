@@ -1,5 +1,5 @@
 #!/bin/bash
-export WINDOW_MANAGER=kwin
+#export WINDOW_MANAGER=kwin
 
 #没有这一条，dolphin会丢失各种mimetype的打开方式
 export XDG_MENU_PREFIX=plasma-
