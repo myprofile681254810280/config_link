@@ -1,11 +1,11 @@
-(xbindkey '(mod4 "d")           "bash ~/bin/run_tiny")
-(xbindkey '(mod4 "Return")      "bash ~/bin/run_tiny")
+(xbindkey '(mod4 "d")           "bash ~/bin/dmenu_run_history -fn 'xos4 Terminus'")
+;;(xbindkey '(mod4 "Return")      "bash ~/bin/run_tiny")
 ;;小键盘回车
-(xbindkey '(mod4 "KP_Enter")    "bash ~/bin/run_tiny")
+;;(xbindkey '(mod4 "KP_Enter")    "bash ~/bin/run_tiny")
 ;;有什么kwin配置抢占了这个键位
-(xbindkey '(mod4 "2")           "bash ~/bin/run")
+;;(xbindkey '(mod4 "2")           "bash ~/bin/run")
 ;;桌面菜单
-(xbindkey '(mod4 "1")           "bash ~/bin/menu")
+(xbindkey '(mod4 "1")           "bash ~/app/desktop_menu/run_menu.sh")
 
 
 (load ".config/xbindkeys/tile_full2.scm")
