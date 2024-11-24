@@ -6,7 +6,7 @@ mv ~/.config/xbindkeys /dev/shm/
 mv ~/.xbindkeysrc.scm /dev/shm/
 mv ~/.config/x /dev/shm/
 mv ~/.config/i3 /dev/shm/
-mv ~/.config/vim /dev/shm/
+#mv ~/.config/vim /dev/shm/
 mv ~/.vim /dev/shm/
 #mv ~/.vimrc /dev/shm/
 mv ~/.config/mpv /dev/shm/
