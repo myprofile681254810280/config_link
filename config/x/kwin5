@@ -3,7 +3,7 @@
 
 #没有这一条，dolphin会丢失各种mimetype的打开方式
 export XDG_MENU_PREFIX=plasma-
-#kglobalaccel5.82需要这个
+#kglobalaccel5.82需要这个，并且我们以后可以用这个参数判断当前桌面环境
 export XDG_CURRENT_DESKTOP=KDE
 
 #latte-dock需要 , 一些dbus事件也需要
