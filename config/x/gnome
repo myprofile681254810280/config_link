@@ -1,0 +1,15 @@
+#!/bin/bash
+
+source ~/config/rc/x/dpi.sh
+source ~/config/rc/x/env.sh
+
+bash ~/config/input/mouse.sh
+bash ~/bin/keys.sh
+
+source ~/bin/daemons/fcitx.sh
+
+bash ~/bin/daemons/shortcuts.sh
+
+bash ~/config/rc/x/nonx.sh &
+
+exec gnome-session

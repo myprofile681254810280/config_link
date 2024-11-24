@@ -1,0 +1,15 @@
+#!/bin/bash
+#编辑qtcurve需要用到
+
+export WINDOW_MANAGER=kde
+
+#这是compiz的,但是可以暂且用
+bash ~/bin/daemons/shortcuts.sh
+
+
+source ~/bin/daemons/fcitx.sh
+
+
+
+
+exec startkde

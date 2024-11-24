@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+"""
+nodm 碰到的问题
+1.compiz dbus启动不了,接连影响到volnoti等
+2.session中没有systemctl reboot等权限
+猜测,可能和xinit有关?
+
+xinit自身的确没有reboot权限
+但是dbus没问题
+此外,部分窗口缺乏阴影
+
+nodm不设定xinit路径的情况下,开机会阻塞掉tty,进入死循环
+只能依靠第三方引导来修复,所以很危险
+
+缺失的权限需要修改
+/etc/pam.d/nodm
+来添加,
+详见
+https://wiki.archlinux.org/index.php/Nodm
+
+剩下的问题是,nodm开机的时候会奇怪的重启x
+不知为何会重复运行
+或许和systemd的管理有关
+"""
+bash ~/bin/daemons/shortcuts.sh
+exec compiz  

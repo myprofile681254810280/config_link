@@ -1,0 +1,58 @@
+#!/bin/bash
+export WINDOW_MANAGER=kwin
+
+export QT_QPA_PLATFORMTHEME=kde
+systemctl --user import-environment QT_QPA_PLATFORMTHEME XAUTHORITY DISPLAY
+
+redshift &
+
+######################
+#X相关env
+#source ~/bin/x.sh
+source ~/config/rc/x/dpi.sh
+export TERM=~/bin/term
+
+######################################
+#fcitx
+export GTK_IM_MODULE=fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
+#export QT_STYLE_OVERRIDE=kvantum 
+
+#让firefox等的文件打开关闭窗口从gtk系换到dolphin
+#需要安装xdg-desktop-portal xdg-desktop-portal-kde
+#portal不使用原程序的环境变量,需要systemctl中插入环境变量
+export GTK_USE_PORTAL=1
+
+#systemctl show-environment
+#systemctl show-environment --user
+#在systemctl共享变量
+
+
+########################
+#capswap
+bash ~/bin/keys.sh
+
+########################
+#键盘操作的时候隐藏鼠标.
+#原版的unclutter实现似乎不太好,容易出问题.据说和i3冲突.
+#测试下如果的确如此,那么需要换成aur版本的.
+unclutter &
+
+#用wallpaperrc 来判定用户是不是host,否则跳过nonx环节,
+if [ -f ~/.wallpaperrc ];then
+    bash ~/config/rc/x/nonx.sh &
+fi
+
+
+#延迟修正compiz 的缺陷
+#注意这里有一次异步config改动,其他config改动最好能同步前置
+#bash ~/bin/daemons/fix_compiz.sh 
+
+bash ~/config/rc/x/post_kwin.sh &
+
+
+exec kwin_x11 
+#exec liquidshell

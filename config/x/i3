@@ -1,0 +1,69 @@
+#!/bin/bash
+#TODO 
+#2016-09-27 21:04:14 Tue NZDT
+#用惯kdtree之后,用i3就不适应了
+#比如说,i3中没有swap
+#此外,i3中move window的效果和kd tree也不一样
+#所以还不如用openbox+kdtree
+export TERM=~/bin/term
+export GTK_IM_MODULE=fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
+export QT_QPA_PLATFORMTHEME=kde
+#export QT_STYLE_OVERRIDE=kvantum 
+
+export GTK_USE_PORTAL=1
+
+
+unclutter &
+exec i3 #-c ~/config/rc/i3/config
+
+#exit
+#source ~/bin/daemons/fcitx.sh
+#
+#
+#######################
+##X相关env
+##source ~/bin/x.sh
+#source ~/config/rc/x/env.sh
+##source ~/config/rc/displayrc
+#
+##恢复到关机时候的屏幕旋转角度
+##bash ~/bin/orientation.sh
+#
+#########################
+##capswap
+##bash ~/bin/keys.sh
+#
+#
+#########################
+##显示音量.
+##volnoti
+#
+#
+#########################
+##0.8开机需要这个,因为路径放在了/dev/shm里面了
+##bash ~/git/compiz_wallpaper_manager/compiz.sh #Pictures/compiz/bin/compiz.sh
+##bash $WALLPAPER_SCRIPT
+##弥补下compiz的速度
+##feh /dev/shm/w1/001.png --bg-fill
+##feh /dev/shm/w2/001.png --bg-fill
+#
+#
+#########################
+##bash ~/bin/daemons/shortcuts.sh
+##bash ~/bin/daemons/mpd.sh
+##消息频繁的时候,这个东西似乎会带来消耗?
+##bash ~/bin/daemons/notifyd.sh
+#
+#
+#########################
+##键盘操作的时候隐藏鼠标.
+##原版的unclutter实现似乎不太好,容易出问题.据说和i3冲突.
+##测试下如果的确如此,那么需要换成aur版本的.
+##unclutter &
+#
+#
+##exec i3 -c ~/config/rc/i3/config

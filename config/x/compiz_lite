@@ -1,0 +1,7 @@
+#!/bin/bash
+
+
+bash ~/bin/keys.sh
+bash ~/bin/compiz/set_random_wallpaper.sh
+bash ~/bin/daemons/shortcuts.sh
+exec compiz  

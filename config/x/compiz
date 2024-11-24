@@ -1,0 +1,53 @@
+#!/bin/bash
+
+#2017-07-30 19:13:03 Sun NZST
+#一些systemd用户端需要这个,已知的是xfce4-notifyd
+systemctl --user import-environment DISPLAY XAUTHORITY
+
+redshift &
+
+######################
+#X相关env
+#source ~/bin/x.sh
+source ~/config/rc/x/dpi.sh
+source ~/config/rc/x/env.sh
+
+#2017-01-25 08:50:33 Wed NZDT
+#暂时性的鼠标调整
+bash ~/config/input/mouse.sh
+
+########################
+#capswap
+bash ~/bin/keys.sh
+
+
+########################
+#0.8开机需要这个,因为路径放在了/dev/shm里面了
+bash ~/bin/compiz/set_random_wallpaper.sh
+
+
+#消息频繁的时候,这个东西似乎会带来消耗?
+#不过需要它来显示welcome
+bash ~/bin/daemons/notifyd.sh
+
+
+########################
+#键盘操作的时候隐藏鼠标.
+#原版的unclutter实现似乎不太好,容易出问题.据说和i3冲突.
+#测试下如果的确如此,那么需要换成aur版本的.
+unclutter &
+
+#用wallpaperrc 来判定用户是不是host,否则跳过nonx环节,
+if [ -f ~/.wallpaperrc ];then
+    bash ~/config/rc/x/nonx.sh &
+fi
+
+
+#延迟修正compiz 的缺陷
+#注意这里有一次异步config改动,其他config改动最好能同步前置
+bash ~/bin/daemons/fix_compiz.sh 
+
+
+exec compiz  
+#compiz  
+#sakura

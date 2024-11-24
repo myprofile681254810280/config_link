@@ -1,0 +1,26 @@
+#下面是为了打开firefox cert 窗口的临时修改
+#!/bin/bash
+#以下配置无用,没有它们,firefox也可以转到qt弹窗,有了它们,chromium依然是gtk弹窗
+#最后一句export是必要的
+
+
+export XDG_CURRENT_DESKTOP=gnome #KDE
+export QT_QPA_PLATFORMTHEME=gnome #kde
+
+dbus-update-activation-environment --systemd --all #XDG_CURRENT_DESKTOP=KDE
+
+#使用portal后,portal需要靠systemd插入环境变量
+systemctl --user import-environment QT_QPA_PLATFORMTHEME
+systemctl --user import-environment XDG_CURRENT_DESKTOP
+
+#pkill xdg-desktop-portal-gtk
+#jjsleep 3
+
+#/usr/lib/xdg-desktop-portal #&
+#/usr/lib/xdg-desktop-portal-kde # &
+/usr/lib/xdg-desktop-portal-gtk #kde # &
+
+#让firefox等的文件打开关闭窗口从gtk系换到dolphin
+#需要安装xdg-desktop-portal xdg-desktop-portal-kde
+export GTK_USE_PORTAL=1
+firefox

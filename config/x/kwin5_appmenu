@@ -1,0 +1,22 @@
+#!/bin/sh
+
+#需要依赖
+#appmenu-gtk-module libdbusmenu-glib libdbusmenu-gtk2 libdbusmenu-gtk3 libdbusmenu-qt5
+
+#来自/bin/startkde
+#其中保留下来的行数能确保kde的appmenu在latte dock中运作
+#基本上只有参数,所以不需要分开进程
+bash ~/config/rc/x/kwin5_appmenu_kde 
+
+#来自/etc/xdg/autostart/gmenudbusmenuproxy.desktop
+#这里为了支持gtk
+gmenudbusmenuproxy &
+
+
+#一些问题
+#transmission-gtk, alt+f触发的menu出现的位置是在窗口中
+#而鼠标点击的menu则是出现在顶部
+
+#注意从latte给appmenu设定快捷键alt+f,
+#不然一些窗口,比如kate/dolphin可以alt+f,但是另一些,比如konsole,是无法使用的
+#但是,这会带来一个问题,transmission在这种情况下alt+f无反应,不过因为本来这些menu出现位置错误,所以不显示也可以,显示反而会有误导性.

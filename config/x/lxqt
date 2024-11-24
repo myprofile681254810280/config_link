@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#这是compiz的,但是可以暂且用
+bash ~/bin/daemons/shortcuts.sh
+source ~/bin/daemons/fcitx.sh
+
+exec startlxqt

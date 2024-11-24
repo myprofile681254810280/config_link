@@ -1,0 +1,52 @@
+#!/bin/bash
+#TODO 未完成
+#问题
+#openbox下面qt window drag有问题,晃动厉害.
+#kd_tree 暂且和openbox的相性不是很好,大概有什么细节问题需要调整处理
+export WINDOW_MANAGER=openbox
+
+######################
+#X相关env
+#source ~/bin/x.sh
+source ~/config/rc/x/env.sh
+#source ~/config/rc/displayrc
+
+#恢复到关机时候的屏幕旋转角度
+#bash ~/bin/orientation.sh
+
+########################
+#capswap
+#bash ~/bin/keys.sh
+
+
+########################
+#显示音量.
+#volnoti
+
+
+########################
+#0.8开机需要这个,因为路径放在了/dev/shm里面了
+#bash ~/git/compiz_wallpaper_manager/compiz.sh #Pictures/compiz/bin/compiz.sh
+#bash $WALLPAPER_SCRIPT
+#弥补下compiz的速度
+#feh /dev/shm/w1/001.png --bg-fill
+#feh /dev/shm/w2/001.png --bg-fill
+
+
+########################
+source ~/bin/daemons/fcitx.sh
+bash ~/bin/daemons/shortcuts.sh
+bash ~/bin/daemons/mpd.sh
+#消息频繁的时候,这个东西似乎会带来消耗?
+bash ~/bin/daemons/notifyd.sh
+
+
+########################
+#键盘操作的时候隐藏鼠标.
+#原版的unclutter实现似乎不太好,容易出问题.据说和i3冲突.
+#测试下如果的确如此,那么需要换成aur版本的.
+unclutter &
+
+
+compton --config ~/config/rc/compton/compton.conf -b
+exec openbox

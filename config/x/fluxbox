@@ -1,0 +1,58 @@
+#!/bin/bash
+export WINDOW_MANAGER=kwin
+
+#kglobalaccel5.82需要这个
+export XDG_CURRENT_DESKTOP=KDE
+
+#latte-dock需要 , 一些dbus事件也需要
+#缺少这两个变量的时候,kwin会产生奇怪的阻塞,可能是因为dbus导致的
+#由于DISPLAY在这里固定了,似乎不能从tty开启单一用户的多个xserver
+systemctl --user import-environment XAUTHORITY DISPLAY 
+
+#systemctl show-environment
+#systemctl show-environment --user
+
+#kwin中有替代,不过替代品不便我们命令行控制,设置快捷link
+redshift &
+
+######################
+#X相关env
+#source ~/bin/x.sh
+source ~/config/rc/x/dpi.sh
+export TERM=~/bin/term
+
+######################################
+#fcitx
+export GTK_IM_MODULE=fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
+export QT_QPA_PLATFORMTHEME=kde
+#export QT_STYLE_OVERRIDE=kvantum 
+
+export GTK_USE_PORTAL=1
+
+
+########################
+#capswap
+bash ~/bin/keys.sh
+
+########################
+#键盘操作的时候隐藏鼠标.
+#原版的unclutter实现似乎不太好,容易出问题.据说和i3冲突.
+#测试下如果的确如此,那么需要换成aur版本的.
+unclutter &
+
+fcitx5 &
+
+bash ~/bin/daemons/mpd.sh
+
+bash ~/bin/daemons/shortcuts.sh
+
+echo fluxbox welcome $(date) >> ~/del/log/reboot.log
+
+pkill feh
+
+picom &
+exec startfluxbox
