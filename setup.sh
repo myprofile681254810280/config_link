@@ -22,6 +22,8 @@ mv ~/.local/share/dolphin /dev/shm/
 mv ~/.local/share/konsole /dev/shm/
 mv ~/.local/share/applications /dev/shm/
 mv ~/.local/share/plasma /dev/shm/
+mv ~/.local/bin /dev/shm/
+mv ~/bin /dev/shm/
 
 #这里有一个dolphin用的配色
 ln -s "$ROOT/local-share/color-schemes"  ~/.local/share/
@@ -36,5 +38,8 @@ ln -s "$ROOT/local-share/applications"        ~/.local/share/
 #这里面是我们手写的desktoptheme breeze-dark-opaque
 #里面的改动是dialogs和widgets 的透明度，其他都是breeze dark的link
 ln -s "$ROOT/local-share/plasma"        ~/.local/share/
+#管理bin目录，这个目录并不给x权限，但是会有手动执行的需要
+ln -s "$ROOT/local-share/bin"        ~/.local/
+ln -s ~/.local/bin ~/
 
 
