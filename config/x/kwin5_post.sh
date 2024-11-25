@@ -18,7 +18,10 @@ fcitx5 &
 ##左上角菜单
 #python ~/app/desktop_menu/desktop_topleft_qt.py &
 #全局blur监听
-python ~/app/kwin/blur/kwin_auto_blur.py &
+
+#这个暂时关掉，似乎用不到。 
+#用不到的原因是，常用的konsole dolphin fcitx menu，都自带了blur设置，而脚本中提及的onboard等现在都不用了
+#python ~/app/kwin/blur/kwin_auto_blur.py &
 #重置配置
 #bash ~/config/rc_copy/kwin/all.sh
 
