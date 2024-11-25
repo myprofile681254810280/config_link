@@ -34,3 +34,16 @@ breeze无法开大阴影，因为开大阴影的时候，konsole和dolphin都会
 不过用breeze的时候我们并不担心这个问题，因为dolphin可以在winrule中设置自己的color scheme
 
 
+-----------------------------
+dolphin 是通过kvarcdolphin设置的透明，所以它出问题可能会和这个有关
+但是konsole的背景是自带的，和所有这些kv主题无关
+并且，如果从kvantum换成breeze或是oxygen的内部theme，konsole的问题依然在，
+所以这个问题和kv主题无关，和kv框架也无关
+
+而从win decor的角度来看
+breeze是问题所在，oxygen有点受影响，可能因为两者的代码维护者有关联，而plastik（或许是aurora）则不受影响
+但是只有kde自带的breeze和oxygen会尊重win rules，并且它们的阴影效果更好
+
+oxygen受影响较小，但还是比较奇怪，主要是konsole的窗体有着比标题更明显的黑边
+
+
