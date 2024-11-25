@@ -37,7 +37,7 @@ breeze无法开大阴影，因为开大阴影的时候，konsole和dolphin都会
 -----------------------------
 dolphin 是通过kvarcdolphin设置的透明，所以它出问题可能会和这个有关
 但是konsole的背景是自带的，和所有这些kv主题无关
-并且，如果从kvantum换成breeze或是oxygen的内部theme，konsole的问题依然在，
+并且，如果从kvantum换成qt6ct,或者breeze和oxygen的内部theme，konsole的问题依然在，
 所以这个问题和kv主题无关，和kv框架也无关
 
 而从win decor的角度来看
